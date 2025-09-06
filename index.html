@@ -21,7 +21,6 @@
             box-sizing: border-box;
         }
 
-        /* Added for smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -33,15 +32,13 @@
             line-height: 1.6;
             font-size: 18px;
             
-            /* Background Image Styles */
-            background-image: url('images/background1.jpg'); /* Make sure this path is correct */
-            background-size: cover; /* Cover the entire background */
-            background-attachment: fixed; /* Keep image fixed when scrolling */
-            background-position: center center; /* Center the image */
-            position: relative; /* Needed for the overlay */
+            background-image: url('images/background1.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            position: relative;
         }
 
-        /* Overlay to make text more readable on top of the background image */
         body::before {
             content: '';
             position: absolute;
@@ -49,8 +46,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(10, 25, 47, 0.85); /* Slightly increased opacity for readability */
-            z-index: -1; /* Place behind content */
+            background-color: rgba(10, 25, 47, 0.85);
+            z-index: -1;
         }
 
         .container {
@@ -58,7 +55,7 @@
             margin: auto;
             overflow: hidden;
             padding: 0 2rem;
-            position: relative; /* Ensure content is above the body::before overlay */
+            position: relative;
             z-index: 0;
         }
 
@@ -164,7 +161,6 @@
             background: var(--highlight-color);
         }
 
-        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -186,7 +182,6 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* Projects */
         .project-card {
             background: var(--secondary-color);
             border-radius: 8px;
@@ -225,7 +220,6 @@
             font-weight: 500;
         }
         
-        /* Experience */
         .experience-item {
             background: var(--secondary-color);
             padding: 2rem;
@@ -248,14 +242,13 @@
         }
          .experience-item ul {
             list-style-position: inside;
-            padding-left: 1rem; /* Added for better indentation */
+            padding-left: 1rem;
          }
         .experience-item ul li {
             margin-bottom: 0.5rem;
             color: var(--light-text-color);
         }
 
-        /* Certifications */
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -267,18 +260,18 @@
             border-radius: 8px;
             overflow: hidden;
             text-align: center;
-            transition: transform 0.3s ease; /* Added transition */
+            transition: transform 0.3s ease;
         }
 
         .cert-card:hover {
-            transform: translateY(-5px); /* Added hover effect */
+            transform: translateY(-5px);
         }
         
         .cert-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #e0e0e0; /* Placeholder color */
+            background-color: #e0e0e0;
         }
         
         .cert-card h3 {
@@ -303,67 +296,56 @@
         }
 
         /* --- Responsive Styles --- */
-        /* This block applies styles only on screens 768px or smaller */
         @media (max-width: 768px) {
             body {
-                font-size: 16px; /* Slightly reduce base font size */
+                font-size: 16px;
             }
 
             .container {
-                padding: 0 1rem; /* Reduce side padding on small screens */
+                padding: 0 1rem;
             }
-
-            .navbar {
-                flex-direction: column; /* Stack logo and nav links */
-                align-items: center;
-            }
-
-            .navbar ul {
-                margin-top: 1rem;
-                padding-left: 0; /* Remove default padding */
-                flex-direction: column; /* Stack nav links */
-                align-items: center;
-                width: 100%;
-            }
-
+            
+            /* NEW NAVBAR STYLES FOR MOBILE */
             .navbar ul li {
-                margin: 0.5rem 0; /* Adjust margin for vertical layout */
+                margin-left: 8px; /* Reduced space between items */
             }
+
+            .navbar a {
+                font-size: 13px; /* Made font smaller to fit */
+                padding: 0.2rem; /* Reduced padding */
+            }
+            /* END NEW NAVBAR STYLES */
+
 
             .hero {
                 padding: 4rem 0;
-                text-align: center; /* Center hero text on mobile */
+                text-align: left; /* Aligned back to left */
             }
 
             .hero h1 {
-                font-size: 2.5rem; /* Reduce font size for main heading */
+                font-size: 2.5rem;
             }
 
             .hero h2 {
-                font-size: 1.8rem; /* Reduce font size for sub-heading */
+                font-size: 1.8rem;
             }
 
             .hero p {
-                max-width: 100%; /* Allow paragraph to take full width */
-            }
-
-            .social-links {
-                justify-content: center;
-                display: flex;
+                max-width: 100%;
             }
             
             section {
-                padding: 4rem 0; /* Reduce section padding */
+                padding: 4rem 0;
             }
 
             .section-title {
-                font-size: 2rem; /* Reduce section title font size */
-                text-align: center; /* Center titles on mobile */
+                font-size: 2rem;
+                text-align: left; /* Aligned back to left */
             }
 
             .section-title::after {
-                left: 50%; /* Center the underline */
-                transform: translateX(-50%);
+                left: 0; /* Aligned underline back to left */
+                transform: none;
             }
         }
     </style>
@@ -426,6 +408,7 @@
                 <div class="skill-item">Git & GitHub</div>
                 <div class="skill-item">TensorFlow</div>
                 <div class="skill-item">PyTorch</div>
+                <div class="skill-item">OpenCV</div>
             </div>
         </section>
 
@@ -478,8 +461,6 @@
                 </ul>
             </div>
         </section>
-
-
         <section id="certs">
             <h2 class="section-title">Certifications</h2>
             <div class="cert-grid">
@@ -499,6 +480,9 @@
                      <span>AWS Training & Certifications(July,2024)</span>
                 </div>
             </div>
+
+
+        
         </section>
 
     </main>
