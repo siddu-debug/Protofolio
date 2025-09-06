@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddeshwar Rajgiri | Software Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #112240;
+            --text-color: #ccd6f6;
+            --highlight-color: #64ffda;
+            --light-text-color: #8892b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Added for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 18px;
+            
+            /* Background Image Styles */
+            background-image: url('images/background1.jpg'); /* Make sure this path is correct */
+            background-size: cover; /* Cover the entire background */
+            background-attachment: fixed; /* Keep image fixed when scrolling */
+            background-position: center center; /* Center the image */
+            position: relative; /* Needed for the overlay */
+        }
+
+        /* Overlay to make text more readable on top of the background image */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.85); /* Slightly increased opacity for readability */
+            z-index: -1; /* Place behind content */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+            position: relative; /* Ensure content is above the body::before overlay */
+            z-index: 0;
+        }
+
+        header {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--highlight-color);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--highlight-color);
+        }
+
+        .hero {
+            padding: 8rem 0;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-text-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: var(--light-text-color);
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            margin-right: 20px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--highlight-color);
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 3rem;
+            color: var(--highlight-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--highlight-color);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+             transform: translateY(-5px);
+        }
+        
+        .project-card h3 {
+            font-size: 1.8rem;
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+             color: var(--light-text-color);
+             margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background-color: var(--primary-color);
+            color: var(--highlight-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Experience */
+        .experience-item {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-left: 4px solid var(--highlight-color);
+            margin-bottom: 1.5rem;
+        }
+        .experience-item h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+        .experience-item .company {
+            font-weight: 600;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+        }
+        .experience-item .date {
+            color: var(--light-text-color);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+         .experience-item ul {
+            list-style-position: inside;
+            padding-left: 1rem; /* Added for better indentation */
+         }
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+            color: var(--light-text-color);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px); /* Added hover effect */
+        }
+        
+        .cert-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e0e0e0; /* Placeholder color */
+        }
+        
+        .cert-card h3 {
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .cert-card span {
+             display: block;
+             padding-bottom: 1rem;
+             color: var(--light-text-color);
+             font-style: italic;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--secondary-color);
+            color: var(--light-text-color);
+        }
+
+        /* --- Responsive Styles --- */
+        /* This block applies styles only on screens 768px or smaller */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Slightly reduce base font size */
+            }
+
+            .container {
+                padding: 0 1rem; /* Reduce side padding on small screens */
+            }
+
+            .navbar {
+                flex-direction: column; /* Stack logo and nav links */
+                align-items: center;
+            }
+
+            .navbar ul {
+                margin-top: 1rem;
+                padding-left: 0; /* Remove default padding */
+                flex-direction: column; /* Stack nav links */
+                align-items: center;
+                width: 100%;
+            }
+
+            .navbar ul li {
+                margin: 0.5rem 0; /* Adjust margin for vertical layout */
+            }
+
+            .hero {
+                padding: 4rem 0;
+                text-align: center; /* Center hero text on mobile */
+            }
+
+            .hero h1 {
+                font-size: 2.5rem; /* Reduce font size for main heading */
+            }
+
+            .hero h2 {
+                font-size: 1.8rem; /* Reduce font size for sub-heading */
+            }
+
+            .hero p {
+                max-width: 100%; /* Allow paragraph to take full width */
+            }
+
+            .social-links {
+                justify-content: center;
+                display: flex;
+            }
+            
+            section {
+                padding: 4rem 0; /* Reduce section padding */
+            }
+
+            .section-title {
+                font-size: 2rem; /* Reduce section title font size */
+                text-align: center; /* Center titles on mobile */
+            }
+
+            .section-title::after {
+                left: 50%; /* Center the underline */
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container navbar">
+            <div class="logo">SR</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certs">Certifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="hero" id="home">
+            <p style="color: var(--highlight-color); font-size: 1.2rem;">Hi, my name is</p>
+            <h1>SIDDESHWAR RAJGIRI</h1>
+            <h2>I build things for the web</h2>
+            <p>
+                I am an aspiring Software Engineer with a strong foundation in Java, data structures, and Spring Boot.I have hands-on experience in CI/CD pipelines, Docker, Linux, and cloud tools, with a keen interest in Python and machine learning.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/siddu-debug" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/siddeshwar-rajgiri-275a06283/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/siddu_rajgiri/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am currently pursuing a Bachelor of Technology in Computer Science and Engineering from the Institute of Aeronautical Engineering, expecting to graduate in June 2027.I am highly motivated, detail-oriented, and always eager to learn new things.With strong motivational and leadership skills, I am comfortable working both independently and as a collaborative member of a team.My goal is to leverage my skills in software development to build innovative and efficient solutions.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Java</div>
+                <div class="skill-item">Spring Boot</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">.NET</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">PHP</div>
+                <div class="skill-item">MySQL</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">React.js</div>
+                <div class="skill-item">REST APIs</div>
+                <div class="skill-item">Cloud</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">CI/CD</div>
+                <div class="skill-item">Git & GitHub</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">PyTorch</div>
+                <div class="skill-item">OpenCV</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-card">
+                <h3>Online Bookstore Management System</h3>
+                <p>Built a full-stack web application to manage books, orders, and users.Developed RESTful APIs for CRUD operations and integrated role-based authentication using Spring Security</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Spring Data JPA</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Thymeleaf</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Online Doctor Appointment System</h3>
+                <p>Developed a full-stack web application for patients to book appointments.Implemented user authentication and role-based access for admins, doctors, and patients with database persistence</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Weather App</h3>
+                <p>Developed a dynamic weather web application that fetches real-time data from the OpenWeatherMap API, allowing users to search for current weather conditions by city</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">OpenWeatherMap API</span>
+                </div>
+            </div>
+        </section>
+
+         <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-item">
+                <h3>Internship (Deep Learning)</h3>
+                <div class="company">MSME TOOL ROOM</div>
+                <div class="date">May 2025</div>
+                <ul>
+                    <li>Worked on real-world deep learning and optimization using frameworks like TensorFlow and PyTorch.</li>
+                    <li>Collaborated on tasks such as image classification, object detection, and performance tuning.</li>
+                    <li><strong>Tools & Technologies:</strong> Python, TensorFlow, Keras, PyTorch, NumPy, OpenCV, Jupyter Notebook</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="certs">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img src="images/AI.png" alt="Oracle University">
+                    <h3>AI Foundations Associate</h3>
+                    <span>Orcle University (June,2025)</span>
+                </div>
+                <div class="cert-card">
+                     <img src="images/Java.png" alt="Java Certification">
+                    <h3>Java Programming</h3>
+                    <span>Infosys Springboard (Dec,2023)</span>
+                </div>
+                <div class="cert-card">
+                    <img src="images/Data.png" alt="HTML/CSS Certification">
+                    <h3>Data Engineering</h3>
+                     <span>AWS Training & Certifications(July,2024)</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Siddeshwar Rajgiri Designed with a passion for code.</p>
+            <p>Contact: (+91) 8008769562 | siddurajgiri17@gmail.com </p>
+        </div>
+    </footer>
+
+</body>
+</html>
