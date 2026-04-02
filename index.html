@@ -59,7 +59,6 @@ h1.hname{font-family:'Syne',system-ui,sans-serif;font-size:clamp(2.8rem,5.5vw,5r
 @keyframes spin{to{transform:rotate(360deg)}}
 .pi{position:absolute;inset:7px;border-radius:50%;background:linear-gradient(135deg,var(--sur),var(--sur2));z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .pi img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.av{font-family:'Syne',system-ui,sans-serif;font-size:4.5rem;font-weight:800;background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .badge{position:absolute;padding:10px 16px;background:var(--sur);border:1px solid var(--bor);border-radius:11px;z-index:3;backdrop-filter:blur(14px)}
 .badge .v{font-family:'Syne',system-ui,sans-serif;font-size:1.3rem;font-weight:800}
 .badge .l{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--txm)}
@@ -162,6 +161,9 @@ h2.st{font-family:'Syne',system-ui,sans-serif;font-size:clamp(1.7rem,2.8vw,2.6re
 .pls{display:flex;gap:8px}
 .pl{width:34px;height:34px;border:1px solid var(--bor);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--txm);font-size:.8rem;text-decoration:none;transition:all .22s}
 .pl:hover{border-color:var(--a);color:var(--a);background:rgba(56,189,248,.07)}
+/* Demo button specifically */
+.pl-demo{padding:0 10px;width:auto;font-family:'DM Mono',monospace;font-size:0.65rem;font-weight:500}
+
 .py{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--txm);margin-bottom:10px}
 .pt{font-family:'Syne',system-ui,sans-serif;font-size:1.1rem;font-weight:700;color:var(--tx);margin-bottom:9px}
 .pd{font-size:.86rem;color:var(--txd);line-height:1.74;margin-bottom:20px;flex:1}
@@ -213,6 +215,7 @@ h2.st{font-family:'Syne',system-ui,sans-serif;font-size:clamp(1.7rem,2.8vw,2.6re
 #mclose{width:38px;height:38px;border:1px solid var(--bor);border-radius:9px;background:transparent;color:var(--txm);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
 #mclose:hover{border-color:var(--a);color:var(--a)}
 #mimgwrap{position:relative;background:rgba(8,11,18,.6);border:1px solid var(--bor);border-radius:13px;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center}
+#mimg{max-width:100%;max-height:600px;object-fit:contain;border-radius:11px;}
 #mph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:30px;text-align:center}
 #mph i{font-size:3rem;color:rgba(56,189,248,.2)}
 #mph p{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--txm);line-height:1.7;max-width:280px}
@@ -312,7 +315,7 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
       <a href="tel:+918008769562" class="si"><i class="fas fa-phone"></i></a>
     </div>
   </div>
- <div class="hr">
+  <div class="hr">
     <div class="pw">
       <div class="pr">
         <div class="pi">
@@ -320,7 +323,7 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
         </div>
       </div>
       <div class="badge gb"><div class="v">8.11</div><div class="l">CURRENT GPA</div></div>
-      <div class="badge eb"><div class="v">3+</div><div class="l">PROJECTS</div></div>
+      <div class="badge eb"><div class="v">5+</div><div class="l">PROJECTS</div></div>
     </div>
   </div>
 </section>
@@ -330,8 +333,8 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
     <div class="sh rv"><span class="sn">01</span><h2 class="st">About Me</h2><div class="sl"></div></div>
     <div class="ag">
       <div class="at rv">
-        <p>I'm <strong>Rajgiri Siddeshwar</strong> (Siddu), a Computer Science &amp; Engineering student at <strong>Institute of Aeronautical Engineering, Hyderabad</strong>, driven by curiosity about how intelligent systems work — and how to secure them.</p>
-        <p>My work spans AI-powered applications, automated security frameworks, and backend systems. Currently building <strong>AegiSec AI</strong> — an autonomous penetration testing framework blending LLM reasoning with real-world exploit orchestration.</p>
+        <p>I'm <strong>Siddeshwar</strong>, a Computer Science &amp; Engineering student at <strong>Institute of Aeronautical Engineering, Hyderabad</strong>, driven by curiosity about how intelligent systems work — and how to secure them.</p>
+        <p>My work spans AI-powered applications, automated security frameworks, and backend systems. Currently building <strong>AegiSec AI</strong> — an autonomous  testing framework blending LLM reasoning with real-world exploit orchestration.</p>
         <p>I interned at <strong>CITD, MSME Tool Room</strong> where I honed deep learning model optimization using TensorFlow &amp; PyTorch. I believe in learning by shipping real things.</p>
         <div class="ig">
           <div class="ii"><div class="k">Location</div><div class="va">Hyderabad, India</div></div>
@@ -428,8 +431,14 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
   <div class="sw">
     <div class="sh rv"><span class="sn">03</span><h2 class="st">Projects</h2><div class="sl"></div></div>
     <div class="pg">
+      
       <div class="pc rv">
-        <div class="pch"><div class="pci"><i class="fas fa-shield-virus"></i></div><div class="pls"><a href="https://github.com/siddu-debug/Aegisec-Ai" target="_blank" class="pl"><i class="fab fa-github"></i></a></div></div>
+        <div class="pch">
+          <div class="pci"><i class="fas fa-shield-virus"></i></div>
+          <div class="pls">
+            <a href="https://github.com/siddu-debug/Aegisec-Ai" target="_blank" class="pl" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
         <div class="py">2026</div><div class="pt">AegiSec AI</div>
         <div class="pd">An AI-driven autonomous penetration testing framework. Integrated LLM-based orchestration with standard security tools, generating structured JSON and HTML vulnerability reports.</div>
         <div class="ps">
@@ -439,8 +448,14 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
           <span class="stk"><i class="fas fa-file-code"></i> JSON/HTML</span>
         </div>
       </div>
+      
       <div class="pc rv">
-        <div class="pch"><div class="pci" style="background:rgba(52,211,153,.1);color:var(--a3)"><i class="fas fa-graduation-cap"></i></div><div class="pls"><a href="https://github.com/siddu-debug/learning-path" target="_blank" class="pl"><i class="fab fa-github"></i></a></div></div>
+        <div class="pch">
+          <div class="pci" style="background:rgba(52,211,153,.1);color:var(--a3)"><i class="fas fa-graduation-cap"></i></div>
+          <div class="pls">
+            <a href="https://github.com/siddu-debug/learning-path" target="_blank" class="pl" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
         <div class="py">2025</div><div class="pt">Cloud-Based AI LMS</div>
         <div class="pd">An AI-powered Learning Management System with personalized learning paths, intelligent chatbot support, and adaptive assessments using modern cloud infrastructure.</div>
         <div class="ps">
@@ -452,8 +467,14 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
           <span class="stk"><i class="fab fa-docker"></i> Docker</span>
         </div>
       </div>
+      
       <div class="pc rv">
-        <div class="pch"><div class="pci" style="background:rgba(129,140,248,.1);color:var(--a2)"><i class="fas fa-users-cog"></i></div><div class="pls"><a href="https://github.com/siddu-debug/Hibernate-crud" target="_blank" class="pl"><i class="fab fa-github"></i></a></div></div>
+        <div class="pch">
+          <div class="pci" style="background:rgba(129,140,248,.1);color:var(--a2)"><i class="fas fa-users-cog"></i></div>
+          <div class="pls">
+            <a href="https://github.com/siddu-debug/Hibernate-crud" target="_blank" class="pl" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
         <div class="py">2025</div><div class="pt">Employee Management System</div>
         <div class="pd">Full-featured RESTful API backend for managing employees with CRUD operations, JWT-based authentication, and robust data persistence using Hibernate ORM.</div>
         <div class="ps">
@@ -464,6 +485,43 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
           <span class="stk"><i class="fas fa-database"></i> MySQL</span>
         </div>
       </div>
+
+      <div class="pc rv">
+        <div class="pch">
+          <div class="pci" style="background:rgba(239,132,60,.1);color:#ef843c"><i class="fas fa-stethoscope"></i></div>
+          <div class="pls">
+            <a href="https://onlinedoc-six.vercel.app/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt" style="margin-right:4px"></i> Demo</a>
+            <a href="https://github.com/siddu-debug/onlinedoc.git" target="_blank" class="pl" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="py">2025</div><div class="pt">Online Doctor Appointment System</div>
+        <div class="pd">A comprehensive healthcare platform for scheduling doctor appointments, managing patient records, and handling hospital administration securely.</div>
+        <div class="ps">
+          <span class="stk"><i class="fab fa-java"></i> Java</span>
+          <span class="stk"><i class="fas fa-leaf"></i> Spring Boot</span>
+          <span class="stk"><i class="fas fa-database"></i> MySQL</span>
+          <span class="stk"><i class="fab fa-react"></i> React</span>
+        </div>
+      </div>
+
+      <div class="pc rv">
+        <div class="pch">
+          <div class="pci" style="background:rgba(52,211,153,.1);color:var(--a3)"><i class="fas fa-comments"></i></div>
+          <div class="pls">
+            <a href="https://chatbot-sandy-nine-75.vercel.app/" target="_blank" class="pl pl-demo"><i class="fas fa-external-link-alt" style="margin-right:4px"></i> Demo</a>
+            <a href="https://github.com/siddu-debug/chatbot.git" target="_blank" class="pl" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="py">2026</div><div class="pt">Intelligent AI Chatbot</div>
+        <div class="pd">An advanced conversational AI assistant capable of context-aware responses and natural language processing, powered by large language models.</div>
+        <div class="ps">
+          <span class="stk"><i class="fab fa-python"></i> Python</span>
+          <span class="stk"><i class="fas fa-link"></i> LangChain</span>
+          <span class="stk"><i class="fas fa-robot"></i> OpenAI API</span>
+          <span class="stk"><i class="fas fa-bolt"></i> FastAPI</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -572,21 +630,23 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
         </div>
       </div>
       <div class="cf rv">
-        <form action="#" method="POST">
+        
+        <form action="https://formspree.io/f/mgoplkrb" method="POST">
           <div class="fg">
             <label>Name</label>
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" name="name" placeholder="Your Name" required>
           </div>
           <div class="fg" style="margin-top: 15px;">
             <label>Email</label>
-            <input type="email" placeholder="you@example.com" required>
+            <input type="email" name="email" placeholder="you@example.com" required>
           </div>
           <div class="fg" style="margin-top: 15px;">
             <label>Message</label>
-            <textarea placeholder="Hello Siddu, I would like to discuss..." required></textarea>
+            <textarea name="message" placeholder="Hello Siddu, I would like to discuss..." required></textarea>
           </div>
           <button type="submit" class="bsend" style="margin-top: 20px;">Send Message <i class="fas fa-paper-plane" style="margin-left:6px"></i></button>
         </form>
+
       </div>
     </div>
   </div>
@@ -614,12 +674,16 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
       </div>
       <button id="mclose" onclick="closeCert()"><i class="fas fa-times"></i></button>
     </div>
+    
     <div id="mimgwrap">
+      <img id="mimg" src="" alt="Certificate" style="display: none;">
+      
       <div id="mph">
         <i class="fas fa-certificate"></i>
         <p>Proof of Certification</p>
       </div>
     </div>
+    
     <div id="macts">
       <button class="mabtn out" onclick="closeCert()">Close</button>
       <a href="#" id="mverify" target="_blank" class="mabtn pri">Verify Credential <i class="fas fa-external-link-alt"></i></a>
@@ -658,26 +722,29 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
 
   document.querySelectorAll('.rv').forEach((el) => observer.observe(el));
 
-  // Certificate Modal Logic
+  // Certificate Modal Logic with Images
   const modal = document.getElementById('cert-modal');
   const certData = {
     'oracle': { 
       title: 'Oracle Cloud Infrastructure — Generative AI Professional', 
       issuer: 'Oracle', 
       date: 'October 2025', 
-      link: '#' // Replace with actual verify link when you have it
+      link: '#', 
+      image: 'oracle-cert.jpg' // Upload this to GitHub
     },
     'samsung': { 
       title: 'Samsung Innovation Campus — Artificial Intelligence', 
       issuer: 'Samsung', 
       date: 'February 2026', 
-      link: '#' // Replace with actual verify link when you have it
+      link: '#', 
+      image: 'samsung-cert.jpg' // Upload this to GitHub
     },
     'infosys': { 
       title: 'Infosys Springboard — Java Programming', 
       issuer: 'Infosys', 
       date: 'September 2024', 
-      link: '#' // Replace with actual verify link when you have it
+      link: '#', 
+      image: 'infosys-cert.png' // Upload this to GitHub
     }
   };
 
@@ -688,6 +755,20 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
       document.getElementById('msub').textContent = data.issuer;
       document.getElementById('mdate').textContent = data.date;
       document.getElementById('mverify').href = data.link;
+      
+      const imgEl = document.getElementById('mimg');
+      const placeholder = document.getElementById('mph');
+      
+      // Toggle image vs placeholder
+      if (data.image) {
+        imgEl.src = data.image;
+        imgEl.style.display = 'block';
+        placeholder.style.display = 'none';
+      } else {
+        imgEl.style.display = 'none';
+        placeholder.style.display = 'flex';
+      }
+      
       modal.classList.add('open');
     }
   }
