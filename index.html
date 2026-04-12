@@ -47,7 +47,7 @@ h1.hname{font-family:'Syne',system-ui,sans-serif;font-size:clamp(2.8rem,5.5vw,5r
 .hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fu .6s .4s ease both}
 .bp{padding:13px 26px;background:var(--a);color:var(--bg);font-family:'DM Mono',monospace;font-size:.78rem;font-weight:500;border:none;border-radius:7px;text-decoration:none;transition:all .24s;letter-spacing:.05em;cursor:pointer}
 .bp:hover{background:#7dd3fc;transform:translateY(-2px);box-shadow:0 10px 32px rgba(56,189,248,.28)}
-.bo{padding:13px 26px;border:1px solid var(--bor);color:var(--txd);font-family:'DM Mono',monospace;font-size:.78rem;background:transparent;border-radius:7px;text-decoration:none;transition:all .24s;letter-spacing:.05em}
+.bo{padding:13px 26px;border:1px solid var(--bor);color:var(--txd);font-family:'DM Mono',monospace;font-size:.78rem;background:transparent;border-radius:7px;text-decoration:none;transition:all .24s;letter-spacing:.05em;display:inline-flex;align-items:center;}
 .bo:hover{border-color:var(--a);color:var(--a);transform:translateY(-2px)}
 .hsoc{display:flex;gap:11px;margin-top:40px;animation:fu .6s .5s ease both}
 .si{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bor);border-radius:9px;color:var(--txm);text-decoration:none;font-size:.9rem;transition:all .24s}
@@ -304,10 +304,13 @@ footer{padding:28px 60px;border-top:1px solid var(--bor);display:flex;justify-co
     <h1 class="hname"><div class="l1">Rajgiri</div><div class="l2">Siddeshwar</div></h1>
     <p class="hrole">B.Tech CSE @ IARE &nbsp;·&nbsp; <span>AI &amp; Full-Stack Developer</span></p>
     <p class="hdesc">Building intelligent systems at the intersection of <strong>AI, security, and the web</strong>. Passionate about deep learning, penetration testing automation, and crafting developer tools that matter.</p>
+    
     <div class="hbtns">
       <a href="#projects" class="bp">View Projects</a>
+      <a href="resume.pdf" target="_blank" class="bo"><i class="far fa-file-pdf" style="margin-right: 6px;"></i> View Resume</a>
       <a href="#contact" class="bo">Get In Touch</a>
     </div>
+
     <div class="hsoc">
       <a href="https://github.com/siddu-debug" target="_blank" class="si"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/siddeshwar-rajgiri-275a06283/" target="_blank" class="si"><i class="fab fa-linkedin-in"></i></a>
