@@ -136,6 +136,14 @@
   .trust-text b{color:#fff;}
 
   /* ================= HERO RIGHT: ORBIT VISUAL ================= */
+  .hero-right-wrap{
+    width:720px;height:720px;flex:none;position:relative;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .hero-right-scale{
+    width:720px;height:720px;flex:none;position:relative;
+    transform:scale(1);transform-origin:center center;
+  }
   .hero-right{width:720px;height:720px;position:relative;flex:none;opacity:0;transform:scale(.85);animation:scaleIn 1.2s cubic-bezier(.22,1,.36,1) forwards;animation-delay:.3s;}
   @keyframes scaleIn{to{opacity:1;transform:scale(1);}}
   .glow-backdrop{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle, rgba(160,104,255,.18) 0%, rgba(160,104,255,0) 62%);filter:blur(10px);}
@@ -318,31 +326,57 @@
   .contact-line{margin-bottom:18px;font-size:.95rem;color:rgba(236,230,255,.75);}
 
   /* ================= RESPONSIVE ================= */
-  @media(max-width:1280px){.hero-right{transform:scale(.85);}}
+  @media(max-width:1280px){
+    .hero-right-wrap{width:612px;height:612px;}
+    .hero-right-scale{transform:scale(.85);}
+  }
   @media(max-width:1024px){
-    .hero{flex-direction:column;padding:20px 32px 40px;text-align:center;}
+    .hero{flex-direction:column;padding:20px 24px 40px;text-align:center;}
     .hero-left{padding-top:20px;}
     .headline{font-size:44px;min-height:auto;}
     .subcopy{margin-left:auto;margin-right:auto;}
     .hero-actions,.trust-row{justify-content:center;}
-    .hero-right{transform:scale(.7);margin:-90px auto -90px;}
     .header-left{gap:24px;}
+    .hero-right-wrap{width:460px;height:460px;margin:0 auto;}
+    .hero-right-scale{transform:scale(.64);}
   }
   @media(max-width:768px){
     nav{display:none;}
-    header{padding:20px 24px;}
-    .headline{font-size:34px;}
-    .cursor-blink{height:30px;}
-    .hero-right{transform:scale(.5);margin:-170px auto -170px;}
+    header{padding:18px 20px;}
+    .headline{font-size:32px;}
+    .cursor-blink{height:28px;}
     .service-item{flex-wrap:wrap;}
+    .hero-right-wrap{width:340px;height:340px;}
+    .hero-right-scale{transform:scale(.47);}
+    .section-pad{padding:72px 20px;}
+    .section-head{margin-bottom:44px;}
   }
   @media(max-width:480px){
-    header{padding:16px 20px;}
+    header{padding:14px 16px;}
+    .header-left{gap:14px;}
+    .logo-mark{font-size:17px;}
     .headline{font-size:26px;}
-    .hero-right{transform:scale(.4);margin:-215px auto -215px;}
+    .eyebrow{font-size:11px;padding:6px 12px;}
+    .subcopy{font-size:14px;}
     .btn,.btn-start{padding:10px 18px;font-size:13px;}
+    .hero-right-wrap{width:260px;height:260px;}
+    .hero-right-scale{transform:scale(.36);}
+    .trust-row{flex-wrap:wrap;justify-content:center;text-align:center;}
+    .stats-row{gap:12px;}
+    .stat-card{padding:20px 22px;min-width:120px;}
+    .stat-num{font-size:1.9rem;}
+    .service-item{gap:16px;padding:22px 0;}
+    .service-icon{width:52px;height:52px;font-size:1.4rem;}
+    .section-title{font-size:1.9rem;}
+    .projects-grid,.certs-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:360px){
+    .hero-right-wrap{width:220px;height:220px;}
+    .hero-right-scale{transform:scale(.305);}
+    .headline{font-size:22px;}
   }
 </style>
+
 </head>
 <body>
 <div class="app">
@@ -399,6 +433,8 @@
       </div>
     </div>
 
+    <div class="hero-right-wrap">
+    <div class="hero-right-scale">
     <div class="hero-right" id="circles">
       <div class="glow-backdrop"></div>
       <div class="orbit o4"><div class="orbit-ring"></div></div>
@@ -441,6 +477,8 @@
       <div class="avatar-pos" data-r="399" data-a="320" style="width:58px;height:58px;">
         <div class="avatar circle glow-green" style="width:58px;height:58px;animation-delay:2.3s;"><i class="fa-solid fa-database" style="font-size:1.8rem;color:#4479A1;"></i></div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
 
